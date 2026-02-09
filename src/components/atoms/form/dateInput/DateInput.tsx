@@ -1,6 +1,6 @@
 interface DateInputProps {
   label?: string;
-  name: string; // ⬅️ WAJIB
+  name: string; 
   value: 'dd/mm/yyyy' | 'mm/dd/yyyy';
   onChange: (value: 'dd/mm/yyyy' | 'mm/dd/yyyy') => void;
 }
