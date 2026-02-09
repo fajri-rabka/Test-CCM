@@ -34,7 +34,7 @@ const CreateFormModal: React.FC<Props> = ({
       }
 
       if (elements.some(el => !el.name.trim())) {
-        alert('All elements must have a name');
+        formik.setFieldError('formName', 'All form elements must have a name');
         return;
       }
 
@@ -61,7 +61,7 @@ const CreateFormModal: React.FC<Props> = ({
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="flex justify-between items-center mb-4">
         <p className="font-semibold text-lg">New Form</p>
-        <Button label="Add Element" icon={FaPlus({}) as JSX.Element} onClick={addElement} />
+        <Button label="Add Elements" icon={FaPlus({}) as JSX.Element} onClick={addElement} />
       </div>
 
       <Input
@@ -102,7 +102,7 @@ const CreateFormModal: React.FC<Props> = ({
 
             {el.type === 'date' && (
                 <DateInput
-                    label="Date Format"
+                    // label="Date Format"
                     name={`date-format-${el.id}`} 
                     value={el.dateFormat ?? 'dd/mm/yyyy'}
                     onChange={(value: any) =>
@@ -116,7 +116,7 @@ const CreateFormModal: React.FC<Props> = ({
 
       <div className="flex justify-end gap-2 mt-6">
         <Button label="Cancel" onClick={onClose} />
-        <Button label="Create Form" onClick={formik.submitForm} />
+        <Button className="bg-blue-500 hover:bg-blue-600 text-white"  label="Submit" onClick={formik.submitForm} />
       </div>
     </Modal>
   );

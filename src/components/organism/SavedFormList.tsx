@@ -85,7 +85,7 @@ const SavedFormList: React.FC<Props> = ({
 
                   {el.type === 'date' && (
                     <DateInput
-                      label="Date Format"
+                      // label="Date Format"
                       name={`date-format-${form.id}-${el.id}`}
                       value={el.dateFormat ?? 'dd/mm/yyyy'}
                       onChange={value => {
