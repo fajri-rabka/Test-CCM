@@ -18,7 +18,7 @@ const SaveForm: React.FC = () => {
         onSubmit={formStorage.addForm}
       />
 
-      <div className="bg-gray-200 p-4 flex justify-between items-center border-b">
+      <div className="bg-gray-200 p-4 flex justify-between items-center border-b border-gray-300">
         <p className="font-semibold text-lg">Saved Forms</p>
         <Button
           icon={FaPlus({}) as JSX.Element}
